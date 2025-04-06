@@ -1,0 +1,48 @@
+.nav-desktop, .nav-tablet {
+    max-height: 100px;
+    margin: 20px;
+    background-color: #f8f8f8b0;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-mobile {
+    width: 70px;
+    margin: 0;
+    background-color: #f8f8f8b0;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 50% 0;
+}
+
+.logo-desktop {
+    width: 50px;
+    margin: 15px 25px;
+}
+
+.logo-tablet {
+    width: 40px;
+    margin: 15px 25px;
+}
+
+.logo-mobile {
+    width: 35px;
+    margin: 15px 20px 20px 15px;
+}
+
+.ul-desktop, .ul-tablet {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}

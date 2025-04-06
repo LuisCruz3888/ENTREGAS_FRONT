@@ -1,0 +1,45 @@
+
+#hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?fashion,store') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+.cta {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.cta:hover {
+    background: #555;
+}
+section {
+    padding: 100px 50px;
+    text-align: center;
+}
+.productos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.producto {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background: black;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
