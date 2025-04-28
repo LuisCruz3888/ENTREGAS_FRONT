@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class NavComponent implements OnInit {
 
   screenSizeClass = '';
+  isMenuHidden = false; // nuevo estado del menú
 
   constructor (
     private responsiveService: ResponsiveService
@@ -21,12 +22,17 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     this.responsiveService.screenSizeClass$.subscribe(className => {
       this.screenSizeClass = className;
+      // Cuando cambias de tamaño, siempre mostramos el menú en desktop/tablet
+      if (className !== 'mobile') {
+        this.isMenuHidden = false;
+      }
     });
   }
 
   toggleMenu() {
-    var navbar = document.getElementById('navbarSupportedContent');
-    navbar?.classList.toggle('active');
+    if (this.screenSizeClass === 'mobile') {
+      this.isMenuHidden = !this.isMenuHidden;
+    }
   }
 
 }

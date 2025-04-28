@@ -1,7 +1,7 @@
 <header>
   <nav [ngClass]="'nav-' + screenSizeClass">
-    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" />
-    <ul [ngClass]="'ul-' + screenSizeClass">
+    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" (click)="toggleMenu()" />
+    <ul [ngClass]="'ul-' + screenSizeClass" [class.hidden]="isMenuHidden">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#testimonios">Testimonios</a></li>

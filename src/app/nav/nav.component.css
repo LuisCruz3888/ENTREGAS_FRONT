@@ -1,4 +1,9 @@
-.nav-desktop, .nav-tablet {
+.nav-desktop,
+.nav-tablet {
+    width: calc(100% - 40px);
+    /* 100% menos el margen de 20px a cada lado */
+    position: fixed;
+    /* Hace que el nav quede fijo */
     max-height: 100px;
     margin: 20px;
     background-color: #f8f8f8b0;
@@ -11,12 +16,35 @@
 }
 
 .nav-mobile {
-    width: 70px;
+    position: fixed;
+    /* Hace que el nav quede fijo */
+    display: inline-flex;
+    /* Flex pero que solo mida el contenido */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
     margin: 0;
     background-color: #f8f8f8b0;
     backdrop-filter: blur(20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 50% 0;
+    border-radius: 0 0 50px 0;
+    box-sizing: border-box;
+}
+
+.ul-mobile {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.ul-mobile li {
+    margin-bottom: 8px;
+}
+
+.ul-mobile li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
 }
 
 .logo-desktop {
@@ -34,7 +62,8 @@
     margin: 15px 20px 20px 15px;
 }
 
-.ul-desktop, .ul-tablet {
+.ul-desktop,
+.ul-tablet {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -45,4 +74,8 @@ li a {
     text-decoration: none;
     color: #333;
     font-weight: 400;
+}
+
+.hidden {
+    display: none;
 }

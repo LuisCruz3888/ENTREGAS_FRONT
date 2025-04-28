@@ -1,15 +1,5 @@
 
-#hero {
-    height: 100vh;
-    background: url('https://source.unsplash.com/1600x900/?fashion,store') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 32px;
-    font-weight: 600;
-}
+
 .cta {
     display: inline-block;
     background: black;
