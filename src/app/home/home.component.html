@@ -1,34 +1,98 @@
+<section id="hero">
+    <!-- Sección principal con un mensaje de bienvenida -->
+    <div>
+        <h1>Personaliza tus momentos con Subliform</h1>
+        <p>Diseños únicos en sublimación y personalizados para cada ocasión.</p>
+    </div>
+</section>
 
+<section id="servicios">
+    <!-- Sección que describe los servicios ofrecidos -->
+    <h2>Nuestros Servicios</h2>
+    <p>Ofrecemos una amplia variedad de productos personalizados con la mejor calidad en sublimación.</p>
+</section>
+
+<section id="productos">
+    <!-- Sección que muestra los productos destacados -->
+    <h2>Productos Destacados</h2>
+    <div class="productos-grid">
+        <div class="producto">Tazas Personalizadas</div>
+        <div class="producto">Camisetas con Diseño</div>
+        <div class="producto">Llaveros y Más</div>
+    </div>
+</section>
+
+<section id="testimonios" class="testimonios-section">
+    <!-- Sección de testimonios con un carrusel -->
+    <h2>TESTIMONIOS</h2>
     
-    <section id="hero">
-        <div>
-            <h1>Personaliza tus momentos con Subliform</h1>
-            <p>Diseños únicos en sublimación y personalizados para cada ocasión.</p>
-            <a href="#contacto" class="cta">Haz tu pedido</a>
+    <div class="carousel-container">
+        <!-- Botón para ir al testimonio anterior -->
+        <button class="carousel-button prev" (click)="prevTestimonio()">‹</button>
+        
+        <div class="carousel-slide">
+            <!-- Tarjeta que muestra el testimonio actual -->
+            <div class="testimonio-card">
+                <div class="testimonio-text">
+                    <!-- Iteración para mostrar cada línea del testimonio -->
+                    @for (line of testimonios[currentIndex].texto.split('\n'); track $index) {
+                        <p>{{ line }}</p>
+                    }
+                </div>
+                <div class="testimonio-author">
+                    <!-- Autor del testimonio -->
+                    <strong>{{ testimonios[currentIndex].autor }}</strong>
+                </div>
+            </div>
         </div>
-    </section>
+        
+        <!-- Botón para ir al siguiente testimonio -->
+        <button class="carousel-button next" (click)="nextTestimonio()">›</button>
+    </div>
     
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <p>Ofrecemos una amplia variedad de productos personalizados con la mejor calidad en sublimación.</p>
-    </section>
-    
-    <section id="productos">
-        <h2>Productos Destacados</h2>
-        <div class="productos-grid">
-            <div class="producto">Tazas Personalizadas</div>
-            <div class="producto">Camisetas con Diseño</div>
-            <div class="producto">Llaveros y Más</div>
-        </div>
-    </section>
-    
-    <section id="testimonios">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <p>"Excelente calidad y atención, totalmente recomendado!"</p>
-    </section>
-    
-    <footer id="contacto">
-        <h2>Contáctanos</h2>
-        <p>Email: contacto&#64;subliform.com</p>
-        <p>WhatsApp: +57 322 888 513</p>
-    </footer>
+    <div class="carousel-indicators">
+        <!-- Indicadores del carrusel para seleccionar un testimonio específico -->
+        @for (testimonio of testimonios; track $index) {
+            <span 
+                [class.active]="currentIndex === $index" 
+                (click)="currentIndex = $index">
+            </span>
+        }
+    </div>
+</section>
+
+<footer id="contacto">
+    <!-- Sección de contacto -->
+    <div class="form-section">
+        <!-- Formulario de contacto -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="nombre" placeholder="NOMBRE:">
+            <input type="text" formControlName="telefono" placeholder="TELEFONO:">
+            <input type="email" formControlName="correo" placeholder="CORREO:">
+
+            <div class="checkbox-section">
+                <!-- Checkbox para aceptar la política de protección de datos -->
+                <label>
+                    <input type="checkbox" formControlName="aceptaPolitica"> 
+                    <span>He leído, acepto y autorizo el tratamiento de<br>datos personales según la política de protección de datos.</span>
+                </label>
+            </div>
+            <button type="submit" class="btn-enviar">ENVIAR</button>
+        </form>
+
+        <!-- Información de contacto -->
+        <h3>Contactanos</h3>
+        <div>Email: <a href="mailto:contacto@subliform.com">contacto&#64;subliform.com</a></div>
+        <div>WhatsApp: <a href="https://wa.me/573228885913" target="_blank">+57 322 888 5913</a></div>
+    </div>
+
+    <div class="map-section">
+        <!-- Mapa de ubicación -->
+        <h3>Ubicación</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.755918987061!2d-74.0636829!3d4.6539016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3a0e9b0b0b%3A0x1b8e1b8e1b8e1b8e!2sCra.%20101%20%2082-57%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</footer>

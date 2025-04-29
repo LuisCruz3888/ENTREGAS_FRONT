@@ -1,5 +1,4 @@
-
-
+/* Estilo para el botón de llamada a la acción (CTA) */
 .cta {
     display: inline-block;
     background: black;
@@ -10,26 +9,223 @@
     font-weight: 600;
     transition: 0.3s;
 }
+
+/* Cambio de fondo al pasar el mouse sobre el botón CTA */
 .cta:hover {
     background: #555;
 }
+
+/* Estilo general para las secciones */
 section {
     padding: 100px 50px;
     text-align: center;
 }
+
+/* Diseño de la cuadrícula de productos */
 .productos-grid {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
+/* Estilo individual para cada producto */
 .producto {
     background: white;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para el pie de página */
 footer {
-    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #000000;
+    padding: 20px;
+    border-top: 1px solid #e7e7e7;
+    font-size: 14px;
+}
+
+/* Estilo para la sección del formulario en el pie de página */
+.form-section {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los campos de entrada del formulario */
+.form-section input {
+    display: block;
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+/* Estilo para los enlaces dentro de la sección del formulario */
+.form-section a {
+    color: #fff;
+}
+
+/* Estilo para la sección del mapa en el pie de página */
+.map-section {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Estilo para el iframe del mapa */
+.map-section iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 20px;
+}
+
+/* Estilo para la sección de checkboxes */
+.checkbox-section {
+    all: initial; /* Resetea todos los estilos heredados */
+    font-family: Arial, sans-serif; /* Restablece la fuente */
+    font-size: 14px; /* Tamaño de fuente estándar */
+    display: block;
+    margin: 15px 0;
     color: white;
-    padding: 50px;
+}
+
+/* Estilo para las etiquetas de los checkboxes */
+.checkbox-section label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+/* Estilo para los checkboxes */
+.checkbox-section input[type="checkbox"] {
+    margin: 2px 8px 0 0;
+    max-width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de enviar */
+.btn-enviar {
+    background-color: #4CAF50; /* Color verde */
+    border: none;
+    color: white;
+    padding: 12px 24px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse sobre el botón de enviar */
+.btn-enviar:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para la sección de testimonios */
+.testimonios-section {
+    font-family: 'Arial', sans-serif;
+    padding: 3rem 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo para el título de la sección de testimonios */
+.testimonios-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contenedor del carrusel de testimonios */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para cada diapositiva del carrusel */
+.carousel-slide {
+    flex: 1;
+    min-height: 200px;
+}
+
+/* Estilo para las tarjetas de testimonios */
+.testimonio-card {
+    background: rgba(255, 255, 255, 0.664);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para el texto del testimonio */
+.testimonio-text {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #555;
+    white-space: pre-line;
+}
+
+/* Estilo para los párrafos dentro del texto del testimonio */
+.testimonio-text p {
+    margin: 0.5rem 0;
+}
+
+/* Estilo para el autor del testimonio */
+.testimonio-author {
+    font-weight: bold;
+    color: #222;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Estilo para los botones del carrusel */
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    padding: 0 1rem;
+}
+
+/* Cambio de color al pasar el mouse sobre los botones del carrusel */
+.carousel-button:hover {
+    color: #000;
+}
+
+/* Contenedor de los indicadores del carrusel */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Estilo para cada indicador del carrusel */
+.carousel-indicators span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* Estilo para el indicador activo del carrusel */
+.carousel-indicators span.active {
+    background-color: #333;
 }

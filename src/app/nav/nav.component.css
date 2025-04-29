@@ -74,6 +74,8 @@ li a {
     text-decoration: none;
     color: #333;
     font-weight: 400;
+    user-select: none;
+    cursor: pointer;
 }
 
 .hidden {

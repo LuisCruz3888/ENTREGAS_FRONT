@@ -35,4 +35,12 @@ export class NavComponent implements OnInit {
     }
   }
 
+  scrollTo(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  
+
 }

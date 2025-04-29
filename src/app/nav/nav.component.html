@@ -1,11 +1,11 @@
 <header>
   <nav [ngClass]="'nav-' + screenSizeClass">
-    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" (click)="toggleMenu()" />
+    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" (click)="toggleMenu(); scrollTo('hero')" />
     <ul [ngClass]="'ul-' + screenSizeClass" [class.hidden]="isMenuHidden">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+      <li><a (click)="scrollTo('servicios')">Servicios</a></li>
+      <li><a (click)="scrollTo('productos')">Productos</a></li>
+      <li><a (click)="scrollTo('testimonios')">Testimonios</a></li>
+      <li><a (click)="scrollTo('contacto')">Contacto</a></li>
     </ul>
   </nav>
 </header>
