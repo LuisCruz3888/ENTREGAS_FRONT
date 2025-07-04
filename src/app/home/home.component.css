@@ -229,3 +229,10 @@ footer {
 .carousel-indicators span.active {
     background-color: #333;
 }
+
+.img-carrusel {
+    height: 300px;
+    object-fit: contain;
+    width: 100%;
+    border-radius: 20px;
+}

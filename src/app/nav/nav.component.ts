@@ -26,6 +26,9 @@ export class NavComponent implements OnInit {
       if (className !== 'mobile') {
         this.isMenuHidden = false;
       }
+      else {
+        this.isMenuHidden = true; // ocultar el menú en mobile
+      }
     });
   }
 
@@ -33,12 +36,16 @@ export class NavComponent implements OnInit {
     if (this.screenSizeClass === 'mobile') {
       this.isMenuHidden = !this.isMenuHidden;
     }
+    else {
+      this.isMenuHidden = false; // aseguramos que el menú esté visible en desktop/tablet
+    }
   }
 
   scrollTo(fragment: string) {
     const element = document.getElementById(fragment);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.toggleMenu() // ocultar el menú después de hacer scroll
     }
   }
   

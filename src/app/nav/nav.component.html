@@ -1,7 +1,8 @@
 <header>
   <nav [ngClass]="'nav-' + screenSizeClass">
-    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" (click)="toggleMenu(); scrollTo('hero')" />
+    <img [ngClass]="'logo-' + screenSizeClass" src="../assets/imgs/logo_subliform.svg" alt="logo" (click)="toggleMenu()" />
     <ul [ngClass]="'ul-' + screenSizeClass" [class.hidden]="isMenuHidden">
+      <li><a (click)="scrollTo('hero')">Home</a></li>
       <li><a (click)="scrollTo('servicios')">Servicios</a></li>
       <li><a (click)="scrollTo('productos')">Productos</a></li>
       <li><a (click)="scrollTo('testimonios')">Testimonios</a></li>

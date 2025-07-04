@@ -1,6 +1,29 @@
 <section id="hero">
     <!-- Sección principal con un mensaje de bienvenida -->
-    <div>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="z-index: 0;">
+        <div class="carousel-inner">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="..\assets\imgs\subli\1.jpg" class="d-block w-100 img-carrusel" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\assets\imgs\subli\2.jpg" class="d-block w-100 img-carrusel" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\assets\imgs\subli\3.jpg" class="d-block w-100 img-carrusel" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
         <h1>Personaliza tus momentos con Subliform</h1>
         <p>Diseños únicos en sublimación y personalizados para cada ocasión.</p>
     </div>
@@ -25,18 +48,18 @@
 <section id="testimonios" class="testimonios-section">
     <!-- Sección de testimonios con un carrusel -->
     <h2>TESTIMONIOS</h2>
-    
+
     <div class="carousel-container">
         <!-- Botón para ir al testimonio anterior -->
         <button class="carousel-button prev" (click)="prevTestimonio()">‹</button>
-        
+
         <div class="carousel-slide">
             <!-- Tarjeta que muestra el testimonio actual -->
             <div class="testimonio-card">
                 <div class="testimonio-text">
                     <!-- Iteración para mostrar cada línea del testimonio -->
                     @for (line of testimonios[currentIndex].texto.split('\n'); track $index) {
-                        <p>{{ line }}</p>
+                    <p>{{ line }}</p>
                     }
                 </div>
                 <div class="testimonio-author">
@@ -45,19 +68,9 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Botón para ir al siguiente testimonio -->
         <button class="carousel-button next" (click)="nextTestimonio()">›</button>
-    </div>
-    
-    <div class="carousel-indicators">
-        <!-- Indicadores del carrusel para seleccionar un testimonio específico -->
-        @for (testimonio of testimonios; track $index) {
-            <span 
-                [class.active]="currentIndex === $index" 
-                (click)="currentIndex = $index">
-            </span>
-        }
     </div>
 </section>
 
@@ -73,8 +86,9 @@
             <div class="checkbox-section">
                 <!-- Checkbox para aceptar la política de protección de datos -->
                 <label>
-                    <input type="checkbox" formControlName="aceptaPolitica"> 
-                    <span>He leído, acepto y autorizo el tratamiento de<br>datos personales según la política de protección de datos.</span>
+                    <input type="checkbox" formControlName="aceptaPolitica">
+                    <span>He leído, acepto y autorizo el tratamiento de<br>datos personales según la política de
+                        protección de datos.</span>
                 </label>
             </div>
             <button type="submit" class="btn-enviar">ENVIAR</button>
